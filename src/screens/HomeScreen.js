@@ -1,18 +1,17 @@
 import React, { useEffect, useRef } from 'react';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, Animated } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 export default function HomeScreen({ navigation }) {
-  const fadeAnim = useRef(new Animated.Value(0)).current; 
+  const fadeAnim = useRef(new Animated.Value(0)).current;
 
   useEffect(() => {
     Animated.timing(fadeAnim, {
-      toValue: 1, 
-      duration: 1000, 
+      toValue: 1,
+      duration: 1000,
       useNativeDriver: true,
     }).start();
 
-    
     const timer = setTimeout(() => {
       navigation.replace('Second');
     }, 3000);

@@ -2,31 +2,30 @@ import React from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 
-export default function SecondScreen() {
-    return (
-        <View style={styles.container}>
-            <Image
-                source={require('../../assets/casual_dog.png')}
-                style={{ width: 200, height: 160, borderRadius: 50 }}
-            />
-            <Text style={styles.title}>Ótimo dia!</Text>
-            <Text style={styles.subtitle}>Como deseja acessar?</Text>
+export default function SecondScreen({ navigation }) {
+  return (
+    <View style={styles.container}>
+      <Image
+        source={require('../../assets/casual_dog.png')}
+        style={{ width: 280, height: 180, borderRadius: 50 }}
+      />
+      <Text style={styles.title}>Olá! Como deseja acessar?</Text>
 
-            <TouchableOpacity style={styles.googleButton}>
-                <Image
-                    source={require('../../assets/google.png')}
-                    style={styles.googleIcon}
-                />
-                <Text style={styles.googleText}>Entrar com Google</Text>
-            </TouchableOpacity>
+      <TouchableOpacity style={styles.googleButton}>
+        <Image
+          source={require('../../assets/google.png')}
+          style={styles.googleIcon}
+        />
+        <Text style={styles.googleText}>Entrar com Google</Text>
+      </TouchableOpacity>
 
-            <TouchableOpacity style={styles.otherButton}>
-                <Text style={styles.otherText}>Outras opções</Text>
-            </TouchableOpacity>
+      <TouchableOpacity style={styles.otherButton} onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.otherText}>Outras opções</Text>
+      </TouchableOpacity>
 
-            <StatusBar style="auto" />
-        </View>
-    );
+      <StatusBar style="auto" />
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({

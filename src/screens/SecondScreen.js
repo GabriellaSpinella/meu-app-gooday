@@ -6,14 +6,14 @@ export default function SecondScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <Image
-        source={require('../../assets/casual_dog.png')}
-        style={{ width: 280, height: 180, borderRadius: 50 }}
+        source={require('../img/casual_dog.png')}
+        style={{ width: 280, height: 180, borderRadius: 40, resizeMode: 'contain'}}
       />
       <Text style={styles.title}>Olá! Como deseja acessar?</Text>
 
       <TouchableOpacity style={styles.googleButton}>
         <Image
-          source={require('../../assets/google.png')}
+          source={require('../img/google.png')}
           style={styles.googleIcon}
         />
         <Text style={styles.googleText}>Entrar com Google</Text>
@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
         fontSize: 28,
         fontWeight: 'bold',
         color: '#010614',
-        marginTop: 20,
+        marginTop: 50,
     },
     subtitle: {
         fontSize: 15,
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         backgroundColor: '#2cd96b',
         paddingVertical: 8,
-        width: '80%', // deixa o botão ocupar 80% da largura da tela
+        width: '80%',
         borderRadius: 10,
         justifyContent: 'center',
         marginBottom: 15,
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#2cd96b',
         paddingVertical: 8,
-        width: '80%', // mesma largura do botão do Google
+        width: '80%', 
         borderRadius: 10,
         alignItems: 'center',
     },
